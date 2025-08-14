@@ -6,14 +6,23 @@
 <style>
   html,body{height:100%;margin:0}
   .wrap{min-height:100%;display:flex;flex-direction:column}
-  header{padding:16px;font:600 18px system-ui,Arial}
+  header{padding:16px;font:600 18px system-ui,Arial;display:flex;justify-content:space-between;align-items:center}
+  .download-icon{width:24px;height:24px;cursor:pointer;transition:opacity 0.2s}
+  .download-icon:hover{opacity:0.7}
   main{flex:1}
   .pdf{width:100%;height:calc(100vh - 64px);border:0}
   .dl{padding:12px 16px}
 </style>
 <body>
   <div class="wrap">
-    <header>Resume</header>
+    <header>
+      <span>Resume</span>
+      <a href="resume.pdf" download class="download-icon" title="Download Resume">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+        </svg>
+      </a>
+    </header>
     <main>
       <object class="pdf" data="resume.pdf#toolbar=0" type="application/pdf">
         <p class="dl">Can’t display the PDF? <a href="resume.pdf">Download the resume</a>.</p>
